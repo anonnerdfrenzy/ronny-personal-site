@@ -1,16 +1,463 @@
+/* 🌟 RONNY'S TOTALLY RADICAL 90s STYLESHEET 🌟 */
+
 * {
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f2f2f2;
-    padding: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000, #00ff00, #0000ff);
+    background-size: 400% 400%;
+    animation: gradientShift 5s ease infinite;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+    overflow-x: hidden;
+    border: 10px solid #ff00ff;
+    min-height: 100vh;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated starfield background */
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white"/><circle cx="80" cy="40" r="1" fill="yellow"/><circle cx="40" cy="60" r="1" fill="white"/><circle cx="60" cy="80" r="1" fill="yellow"/><circle cx="10" cy="90" r="1" fill="white"/></svg>') repeat;
+    animation: twinkle 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 .container {
-    background-color: #fff;
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 5px solid #ff00ff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 0 30px #ff00ff, inset 0 0 30px rgba(255, 0, 255, 0.3);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 30px #ff00ff, inset 0 0 30px rgba(255, 0, 255, 0.3); }
+    50% { box-shadow: 0 0 50px #00ffff, inset 0 0 50px rgba(0, 255, 255, 0.3); }
+}
+
+/* Welcome banner */
+.welcome-banner {
+    text-align: center;
+    margin-bottom: 30px;
     padding: 20px;
-    max-width: 600px;
+    background: linear-gradient(45deg, #ff1493, #00bfff, #ffd700);
+    border-radius: 15px;
+    border: 3px solid #ffffff;
+}
+
+.rainbow-text {
+    font-size: 2.5em;
+    font-family: 'Impact', sans-serif;
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowShift 2s linear infinite;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+@keyframes rainbowShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.tagline {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    border: 2px dashed #00ffff;
+}
+
+.cyber-tagline {
+    font-size: 1.3em;
+    font-family: 'Papyrus', cursive;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 2px 2px 4px #000000;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    animation: cyberGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes cyberGlow {
+    0% { 
+        text-shadow: 0 0 10px #00ffff, 2px 2px 4px #000000;
+        transform: scale(1);
+    }
+    100% { 
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 2px 2px 4px #000000;
+        transform: scale(1.02);
+    }
+}
+
+.marquee-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffff00;
+    text-shadow: 2px 2px 4px #000000;
+    background: rgba(255, 0, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Construction zone */
+.construction-zone {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #ffff00, #ff0000);
+    border: 3px dashed #000000;
+    margin: 20px 0;
+    animation: flash 1s linear infinite;
+}
+
+@keyframes flash {
+    0%, 50% { background: linear-gradient(45deg, #ffff00, #ff0000); }
+    51%, 100% { background: linear-gradient(45deg, #ff0000, #ffff00); }
+}
+
+.construction-gif {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Visitor counter */
+.visitor-counter {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(45deg, #000000, #333333);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 20px #00ff00; }
+    to { box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; }
+}
+
+.counter-digits {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5em;
+    color: #00ff00;
+    background: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: digitFlicker 0.5s linear infinite;
+}
+
+@keyframes digitFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Main content */
+.main-content {
+    margin-top: 30px;
+}
+
+.neon-text {
+    font-size: 2em;
+    font-family: 'Impact', sans-serif;
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    animation: neonFlicker 1.5s ease-in-out infinite alternate;
+    margin-bottom: 30px;
+}
+
+@keyframes neonFlicker {
+    0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    50% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff; }
+}
+
+/* Profile section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #800080, #ff1493);
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+}
+
+.dancing-gif, .spinning-gif {
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-text h3 {
+    font-size: 1.5em;
+    color: #ffff00;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    font-size: 1.1em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Cool sections */
+.cool-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.section {
+    padding: 20px;
+    background: linear-gradient(45deg, #4b0082, #8b008b);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    animation: sectionPulse 4s ease-in-out infinite;
+}
+
+@keyframes sectionPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.section-title {
+    font-size: 1.3em;
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cool-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cool-list li {
+    padding: 8px 0;
+    font-size: 1.1em;
+    border-bottom: 1px dotted #ffffff;
+}
+
+.cool-list li:last-child {
+    border-bottom: none;
+}
+
+.email-address {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    color: #ffff00;
+    text-align: center;
+    background: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.email-gif {
+    width: 40px;
+    height: 40px;
+    display: block;
     margin: 0 auto;
+    animation: wiggle 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+/* Guestbook */
+.guestbook {
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #2e8b57, #32cd32);
+    border: 3px solid #ffff00;
+    border-radius: 15px;
+}
+
+.guestbook-title {
+    font-size: 1.5em;
+    color: #ffff00;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.guestbook-scroll {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.guestbook-scroll p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: linear-gradient(45deg, #b22222, #dc143c);
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.flame-gif {
+    width: 60px;
+    height: 60px;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.footer-text {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Floating elements */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.floating-skull {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 40px;
+    height: 40px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.bouncing-ball {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Blinking text effect */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+blink {
+    animation: blink 1s linear infinite;
+}
+
+/* Responsive design (even in the 90s!) */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .rainbow-text {
+        font-size: 1.8em;
+    }
+    
+    .cool-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Extra 90s flourishes */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000);
+    z-index: -1;
+    border-radius: 20px;
+    animation: borderGlow 2s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }

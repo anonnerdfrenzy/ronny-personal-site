@@ -49,10 +49,14 @@
             </div>
         </div>
 
-        <!-- Visitor counter -->
-        <div class="visitor-counter">
-            <p>🔥 YOU ARE VISITOR NUMBER: 
-                <span class="counter-digits">001337</span> 🔥
+        <!-- Divorce counter -->
+        <div class="divorce-counter">
+            <p class="divorce-title">💔 LIVE DIVORCE COUNTER 💔</p>
+            <p class="divorce-main">
+                <span class="divorce-count" id="divorceCount">000000</span>
+            </p>
+            <p class="divorce-tagline">
+                <blink>⚡ RONNY FERNANDEZ IS CAPABLE OF MULTIPLE DIVORCES PER SECOND ⚡</blink>
             </p>
         </div>
 
@@ -138,6 +142,32 @@
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.body.style.borderColor = randomColor;
         }, 2000);
+
+        // DIVORCE COUNTER - Multiple divorces per second!
+        let divorceCount = 0;
+        const divorceCounterElement = document.getElementById('divorceCount');
+        
+        function updateDivorceCounter() {
+            // Increment by random amount (1-5) for maximum chaos
+            divorceCount += Math.floor(Math.random() * 5) + 1;
+            
+            // Format with leading zeros for that authentic 90s counter look
+            const formattedCount = divorceCount.toString().padStart(6, '0');
+            divorceCounterElement.textContent = formattedCount;
+        }
+        
+        // Update multiple times per second for maximum obnoxiousness
+        setInterval(updateDivorceCounter, 150); // ~6.7 updates per second
+        
+        // Add extra dramatic effect - sometimes big jumps
+        setInterval(function() {
+            divorceCount += Math.floor(Math.random() * 50) + 10;
+        }, 3000);
+        
+        // Random flashing effect for the counter
+        setInterval(function() {
+            divorceCounterElement.style.color = divorceCounterElement.style.color === 'white' ? '#ff0000' : 'white';
+        }, 800);
     </script>
 </body>
 </html>

@@ -4,6 +4,8 @@
     <title>🌟 RONNY'S TOTALLY AWESOME HOMEPAGE 🌟</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Sans+MS|Papyrus|Impact|Crimson+Text:400,400i">
     <link rel="stylesheet" href="style.css">
+    <!-- Supabase Client -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <!-- Three-column layout -->
@@ -113,7 +115,20 @@
             <!-- Guestbook -->
             <div class="guestbook">
                 <h3 class="guestbook-title">📝 SIGN MY GUESTBOOK! 📝</h3>
-                <marquee direction="up" height="100px" class="guestbook-scroll">
+                
+                <!-- Guestbook form -->
+                <div class="guestbook-form">
+                    <form id="guestbookForm">
+                        <div class="form-row">
+                            <input type="text" id="guestName" placeholder="Your awesome handle" maxlength="20" required>
+                            <input type="text" id="guestMessage" placeholder="Drop your message here!" maxlength="50" required>
+                        </div>
+                        <button type="submit" class="sign-button">🌟 SIGN IT! 🌟</button>
+                    </form>
+                </div>
+
+                <!-- Guestbook entries -->
+                <marquee direction="up" height="100px" class="guestbook-scroll" id="guestbookEntries">
                     <p>🌟 "This site is da bomb!" - CoolDude1998</p>
                     <p>💫 "AWESOME GRAPHICS!" - WebSurfer2000</p>
                     <p>🔥 "Best homepage ever!!!" - HackerKid</p>
@@ -185,6 +200,111 @@
                 localStorage.setItem('darkMode', 'disabled');
             }
         });
+
+        // Initialize Supabase
+        const supabaseUrl = 'https://yuwjdfviustolilhzmzp.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1d2pkZnZpaXVzdG9saWxobXpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIyMTcwMDYsImV4cCI6MjA2Nzc5MzAwNn0.o53QsE5gfW-c_HPE_27mLtyOGN2X0NGLlu-sACThxC4';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Guestbook functionality
+        const guestbookForm = document.getElementById('guestbookForm');
+        const guestbookEntries = document.getElementById('guestbookEntries');
+
+        // Load and display guestbook entries from Supabase
+        async function loadGuestbookEntries() {
+            try {
+                const { data: entries, error } = await supabase
+                    .from('guestbook_entries')
+                    .select('*')
+                    .order('created_at', { ascending: false })
+                    .limit(20);
+
+                if (error) {
+                    console.error('Error loading entries:', error);
+                    return;
+                }
+
+                let entriesHTML = '';
+                entries.reverse().forEach(entry => {
+                    entriesHTML += `<p>${entry.emoji} "${entry.message}" - ${entry.name}</p>`;
+                });
+                
+                guestbookEntries.innerHTML = entriesHTML;
+            } catch (error) {
+                console.error('Error loading guestbook:', error);
+                // Fallback to show default message
+                guestbookEntries.innerHTML = '<p>🌟 "This site is da bomb!" - CoolDude1998</p><p>💫 "AWESOME GRAPHICS!" - WebSurfer2000</p><p>🔥 "Best homepage ever!!!" - HackerKid</p>';
+            }
+        }
+
+        // Add new guestbook entry to Supabase
+        async function addGuestbookEntry(name, message) {
+            try {
+                // Random emoji selection for new entries
+                const emojis = ['🌟', '💫', '🔥', '✨', '🎉', '💎', '🌈', '⚡', '🚀', '🎊'];
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+                const { data, error } = await supabase
+                    .from('guestbook_entries')
+                    .insert([
+                        { 
+                            name: name, 
+                            message: message, 
+                            emoji: randomEmoji 
+                        }
+                    ]);
+
+                if (error) {
+                    console.error('Error adding entry:', error);
+                    alert('Oops! Failed to sign the guestbook. Try again!');
+                    return;
+                }
+
+                // Reload entries to show the new one
+                await loadGuestbookEntries();
+            } catch (error) {
+                console.error('Error adding guestbook entry:', error);
+                alert('Oops! Failed to sign the guestbook. Try again!');
+            }
+        }
+
+        // Handle form submission
+        guestbookForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('guestName');
+            const messageInput = document.getElementById('guestMessage');
+            
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+            
+            if (name && message) {
+                // Show loading state
+                const button = document.querySelector('.sign-button');
+                const originalText = button.textContent;
+                button.textContent = '📡 SIGNING... 📡';
+                button.disabled = true;
+                
+                await addGuestbookEntry(name, message);
+                
+                // Clear form
+                nameInput.value = '';
+                messageInput.value = '';
+                
+                // Show success feedback
+                button.textContent = '🎉 SIGNED! 🎉';
+                button.style.background = 'linear-gradient(45deg, #00ff00, #00ffff, #0080ff)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                    button.disabled = false;
+                }, 2000);
+            }
+        });
+
+        // Load entries on page load
+        loadGuestbookEntries();
 
     </script>
 </body>

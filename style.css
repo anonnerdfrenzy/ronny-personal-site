@@ -511,6 +511,85 @@ body.dark-mode .floating-okezan {
     text-align: center;
 }
 
+/* Guestbook form */
+.guestbook-form {
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(45deg, #000080, #4169e1);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.guestbook-form input {
+    flex: 1;
+    min-width: 150px;
+    padding: 8px 12px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1em;
+    background: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.guestbook-form input::placeholder {
+    color: #888888;
+    font-style: italic;
+}
+
+.guestbook-form input:focus {
+    outline: none;
+    border-color: #00ffff;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+    -webkit-box-shadow: 0 0 15px #00ffff;
+}
+
+.sign-button {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00);
+    background: -webkit-linear-gradient(45deg, #ff0000, #ff8000, #ffff00);
+    color: #000000;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px #ffffff;
+    box-shadow: 0 0 20px #ffff00, inset 0 0 10px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: 0 0 20px #ffff00, inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.sign-button:hover {
+    background: linear-gradient(45deg, #ff8000, #ffff00, #00ff00);
+    background: -webkit-linear-gradient(45deg, #ff8000, #ffff00, #00ff00);
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    box-shadow: 0 0 30px #00ff00, inset 0 0 15px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 30px #00ff00, inset 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.sign-button:active {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+}
+
 /* Footer */
 .footer {
     text-align: center;

@@ -7,9 +7,6 @@
     <meta http-equiv="refresh" content="30">
 </head>
 <body>
-    <!-- Animated starfield background -->
-    <div class="starfield"></div>
-    
     <!-- Main content -->
     <div class="container">
         <!-- Welcome banner -->
@@ -125,8 +122,8 @@
 
     <!-- Floating elements -->
     <div class="floating-elements">
-        <img src="floating-skull.gif" alt="Floating Skull" class="floating-skull">
-        <img src="bouncing-ball.gif" alt="Bouncing Ball" class="bouncing-ball">
+        <img src="gifs/burning-skull.gif" alt="Burning Skull" class="floating-skull">
+        <img src="gifs/rat-dance-2.gif" alt="Dancing Rat" class="floating-rat">
     </div>
 
     <!-- JavaScript for extra 90s effects -->
@@ -143,9 +140,10 @@
             document.body.style.borderColor = randomColor;
         }, 2000);
 
-        // DIVORCE COUNTER - Multiple divorces per second!
+        // DIVORCE COUNTER - Multiple divorces per second (but optimized!)
         let divorceCount = 0;
         const divorceCounterElement = document.getElementById('divorceCount');
+        let colorToggle = false;
         
         function updateDivorceCounter() {
             // Increment by random amount (1-5) for maximum chaos
@@ -154,20 +152,19 @@
             // Format with leading zeros for that authentic 90s counter look
             const formattedCount = divorceCount.toString().padStart(6, '0');
             divorceCounterElement.textContent = formattedCount;
+            
+            // Combine color flashing with counter update for efficiency
+            colorToggle = !colorToggle;
+            divorceCounterElement.style.color = colorToggle ? '#ff0000' : 'white';
         }
         
-        // Update multiple times per second for maximum obnoxiousness
-        setInterval(updateDivorceCounter, 150); // ~6.7 updates per second
+        // Reduced to 3 updates per second (still multiple per second!)
+        setInterval(updateDivorceCounter, 333);
         
-        // Add extra dramatic effect - sometimes big jumps
+        // Add extra dramatic effect - sometimes big jumps (less frequent)
         setInterval(function() {
-            divorceCount += Math.floor(Math.random() * 50) + 10;
-        }, 3000);
-        
-        // Random flashing effect for the counter
-        setInterval(function() {
-            divorceCounterElement.style.color = divorceCounterElement.style.color === 'white' ? '#ff0000' : 'white';
-        }, 800);
+            divorceCount += Math.floor(Math.random() * 30) + 10;
+        }, 5000);
     </script>
 </body>
 </html>

@@ -498,14 +498,52 @@ body {
 
 .floating-rat {
     position: fixed;
-    top: 20%;
-    right: 10%;
+    top: calc(20% - 50px);
+    right: calc(12% - 60px);
     width: 150px !important;
     height: 150px !important;
     max-width: 150px;
     max-height: 150px;
     -webkit-animation: float 3s ease-in-out infinite;
     animation: float 3s ease-in-out infinite;
+    z-index: 1001;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    mix-blend-mode: darken;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.floating-rat2 {
+    position: fixed;
+    top: calc(20% - 50px);
+    right: calc(18% - 60px);
+    width: 140px !important;
+    height: 140px !important;
+    max-width: 140px;
+    max-height: 140px;
+    -webkit-animation: float 2.5s ease-in-out infinite;
+    animation: float 2.5s ease-in-out infinite;
+    z-index: 1001;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    mix-blend-mode: darken;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.floating-rat3 {
+    position: fixed;
+    top: calc(20% - 50px);
+    right: calc(7% - 60px);
+    width: 130px !important;
+    height: 130px !important;
+    max-width: 130px;
+    max-height: 130px;
+    -webkit-animation: float 3.8s ease-in-out infinite;
+    animation: float 3.8s ease-in-out infinite;
     z-index: 1001;
     background: transparent !important;
     border: none;

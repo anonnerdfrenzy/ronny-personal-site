@@ -36,6 +36,10 @@
                 <span id="darkModeText">🌙 ENABLE DARK MODE 🌙</span>
                 <div class="dark-mode-subtitle" id="darkModeSubtitle"><span class="parentheses">(</span><span id="subtitleText">for delicate dispositions</span><span class="parentheses">)</span></div>
             </button>
+            <button id="alternatingModeBtn" class="alternating-mode-btn">
+                <span id="alternatingModeText">⚡ ALTERNATING MODE ⚡</span>
+                <div class="alternating-mode-subtitle">(for the chaotic)</div>
+            </button>
         </div>
 
         <!-- Construction zone -->
@@ -178,6 +182,12 @@
         const darkModeText = document.getElementById('darkModeText');
         const subtitleText = document.getElementById('subtitleText');
         const body = document.body;
+        
+        // Alternating mode functionality
+        const alternatingModeBtn = document.getElementById('alternatingModeBtn');
+        const alternatingModeText = document.getElementById('alternatingModeText');
+        let alternatingInterval = null;
+        let isAlternating = false;
 
         // Check for saved dark mode preference
         if (localStorage.getItem('darkMode') === 'enabled') {
@@ -300,6 +310,45 @@
                     button.style.background = '';
                     button.disabled = false;
                 }, 2000);
+            }
+        });
+
+        // Alternating mode functionality
+        alternatingModeBtn.addEventListener('click', function() {
+            if (isAlternating) {
+                // Stop alternating
+                clearInterval(alternatingInterval);
+                alternatingInterval = null;
+                isAlternating = false;
+                alternatingModeText.textContent = '⚡ ALTERNATING MODE ⚡';
+                alternatingModeBtn.style.background = '';
+                
+                // Re-enable dark mode button
+                darkModeBtn.disabled = false;
+                darkModeBtn.style.opacity = '1';
+            } else {
+                // Start alternating
+                isAlternating = true;
+                alternatingModeText.textContent = '🌪️ CHAOS ENGAGED! 🌪️';
+                alternatingModeBtn.style.background = 'linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff)';
+                
+                // Disable dark mode button while alternating
+                darkModeBtn.disabled = true;
+                darkModeBtn.style.opacity = '0.5';
+                
+                // Start rapid alternating (every 200ms)
+                alternatingInterval = setInterval(function() {
+                    body.classList.toggle('dark-mode');
+                    
+                    // Update dark mode text and subtitle to match current state
+                    if (body.classList.contains('dark-mode')) {
+                        darkModeText.textContent = '☀️ DISABLE DARK MODE ☀️';
+                        subtitleText.textContent = 'for the virtuous';
+                    } else {
+                        darkModeText.textContent = '🌙 ENABLE DARK MODE 🌙';
+                        subtitleText.textContent = 'for delicate dispositions';
+                    }
+                }, 200); // Toggle every 200ms for rapid alternating
             }
         });
 

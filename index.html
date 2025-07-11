@@ -336,7 +336,7 @@
                 darkModeBtn.disabled = true;
                 darkModeBtn.style.opacity = '0.5';
                 
-                // Start rapid alternating (every 200ms)
+                // Start rapid alternating (every 50ms)
                 alternatingInterval = setInterval(function() {
                     body.classList.toggle('dark-mode');
                     
@@ -348,7 +348,7 @@
                         darkModeText.textContent = '🌙 ENABLE DARK MODE 🌙';
                         subtitleText.textContent = 'for delicate dispositions';
                     }
-                }, 200); // Toggle every 200ms for rapid alternating
+                }, 50); // Toggle every 50ms for maximum chaos!
             }
         });
 

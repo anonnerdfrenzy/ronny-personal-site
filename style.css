@@ -158,7 +158,7 @@ body {
 }
 
 .shame-text {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-family: 'Comic Sans MS', cursive;
     margin: 0;
     line-height: 1.4;
@@ -167,7 +167,7 @@ body {
 }
 
 .shame-emphasis {
-    font-size: 1.2em;
+    font-size: 1.0em;
     font-weight: bold;
     color: #ffff00;
     text-shadow: 0 0 15px #ffff00, 2px 2px 4px #000000;
@@ -175,7 +175,7 @@ body {
 }
 
 .shame-final {
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: bold;
     color: #ff00ff;
     text-shadow: 0 0 15px #ff00ff, 2px 2px 4px #000000;

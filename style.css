@@ -445,11 +445,13 @@ body {
 }
 
 .floating-skull {
-    position: absolute;
+    position: fixed;
     top: 15%;
     left: 5%;
-    width: 140px;
-    height: 140px;
+    width: 140px !important;
+    height: 140px !important;
+    max-width: 140px;
+    max-height: 140px;
     -webkit-animation: float 4s ease-in-out infinite, spin 2s linear infinite;
     animation: float 4s ease-in-out infinite, spin 2s linear infinite;
     z-index: 1001;
@@ -459,14 +461,18 @@ body {
     mix-blend-mode: darken;
     filter: drop-shadow(2px 2px 4px rgba(255,0,0,0.5));
     -webkit-filter: drop-shadow(2px 2px 4px rgba(255,0,0,0.5));
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
 }
 
 .floating-rat {
-    position: absolute;
+    position: fixed;
     top: 20%;
     right: 10%;
-    width: 150px;
-    height: 150px;
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px;
+    max-height: 150px;
     -webkit-animation: float 3s ease-in-out infinite;
     animation: float 3s ease-in-out infinite;
     z-index: 1001;
@@ -479,23 +485,46 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { 
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+    }
+}
+
+@-webkit-keyframes float {
+    0%, 100% { 
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% { 
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@-webkit-keyframes spin {
-    from { 
+    0% { 
         transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
     }
-    to { 
+    100% { 
         transform: rotate(360deg);
         -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% { 
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% { 
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 

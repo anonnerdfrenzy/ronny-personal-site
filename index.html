@@ -32,7 +32,7 @@
         <div class="dark-mode-toggle">
             <button id="darkModeBtn" class="dark-mode-btn">
                 <span id="darkModeText">🌙 ENABLE DARK MODE 🌙</span>
-                <div class="dark-mode-subtitle"><span class="parentheses">(</span>for delicate dispositions<span class="parentheses">)</span></div>
+                <div class="dark-mode-subtitle" id="darkModeSubtitle"><span class="parentheses">(</span><span id="subtitleText">for delicate dispositions</span><span class="parentheses">)</span></div>
             </button>
         </div>
 
@@ -161,12 +161,14 @@
         // Dark mode functionality
         const darkModeBtn = document.getElementById('darkModeBtn');
         const darkModeText = document.getElementById('darkModeText');
+        const subtitleText = document.getElementById('subtitleText');
         const body = document.body;
 
         // Check for saved dark mode preference
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeText.textContent = '☀️ DISABLE DARK MODE ☀️';
+            subtitleText.textContent = 'for virtuous eyes only';
         }
 
         // Dark mode toggle function
@@ -175,9 +177,11 @@
             
             if (body.classList.contains('dark-mode')) {
                 darkModeText.textContent = '☀️ DISABLE DARK MODE ☀️';
+                subtitleText.textContent = 'for virtuous eyes only';
                 localStorage.setItem('darkMode', 'enabled');
             } else {
                 darkModeText.textContent = '🌙 ENABLE DARK MODE 🌙';
+                subtitleText.textContent = 'for delicate dispositions';
                 localStorage.setItem('darkMode', 'disabled');
             }
         });

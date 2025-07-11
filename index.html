@@ -183,7 +183,7 @@
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeText.textContent = '☀️ DISABLE DARK MODE ☀️';
-            subtitleText.textContent = 'for virtuous eyes only';
+            subtitleText.textContent = 'for the virtuous';
         }
 
         // Dark mode toggle function
@@ -192,7 +192,7 @@
             
             if (body.classList.contains('dark-mode')) {
                 darkModeText.textContent = '☀️ DISABLE DARK MODE ☀️';
-                subtitleText.textContent = 'for virtuous eyes only';
+                subtitleText.textContent = 'for the virtuous';
                 localStorage.setItem('darkMode', 'enabled');
             } else {
                 darkModeText.textContent = '🌙 ENABLE DARK MODE 🌙';

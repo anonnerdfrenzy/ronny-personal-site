@@ -16,6 +16,7 @@ body {
     border: 10px solid #ff00ff;
     min-height: 100vh;
     position: relative;
+    z-index: 1500;
 }
 
 .container {
@@ -447,11 +448,11 @@ body {
 .floating-skull {
     position: fixed;
     top: 15%;
-    left: 5%;
-    width: 140px !important;
-    height: 140px !important;
-    max-width: 140px;
-    max-height: 140px;
+    left: calc(5% + 30px);
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 180px;
+    max-height: 180px;
     -webkit-animation: float 4s ease-in-out infinite, spin 2s linear infinite;
     animation: float 4s ease-in-out infinite, spin 2s linear infinite;
     z-index: 1001;
@@ -468,9 +469,24 @@ body {
 .floating-guitar {
     position: fixed;
     top: 45%;
-    left: 7%;
+    left: calc(7% - 140px);
     -webkit-animation: float 3.5s ease-in-out infinite;
     animation: float 3.5s ease-in-out infinite;
+    z-index: 1001;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    mix-blend-mode: darken;
+    filter: drop-shadow(2px 2px 4px rgba(255,165,0,0.5));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(255,165,0,0.5));
+}
+
+.floating-guitar2 {
+    position: fixed;
+    top: 45%;
+    left: calc(7% + 40px);
+    -webkit-animation: float 4s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
     z-index: 1001;
     background: transparent !important;
     border: none;
@@ -497,6 +513,15 @@ body {
     mix-blend-mode: darken;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
     -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.floating-okezan {
+    position: fixed;
+    bottom: -25px;
+    right: 0px;
+    width: 450px;
+    height: auto;
+    z-index: -999;
 }
 
 @keyframes float {

@@ -465,6 +465,21 @@ body {
     transform-origin: center center;
 }
 
+.floating-guitar {
+    position: fixed;
+    top: 45%;
+    left: 7%;
+    -webkit-animation: float 3.5s ease-in-out infinite;
+    animation: float 3.5s ease-in-out infinite;
+    z-index: 1001;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    mix-blend-mode: darken;
+    filter: drop-shadow(2px 2px 4px rgba(255,165,0,0.5));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(255,165,0,0.5));
+}
+
 .floating-rat {
     position: fixed;
     top: 20%;

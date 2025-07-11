@@ -170,16 +170,16 @@ body {
 body.dark-mode {
     background: #000000 !important;
     border-color: #ffffff !important;
-    transition: background 0.05s ease, border-color 0.05s ease;
-    -webkit-transition: background 0.05s ease, border-color 0.05s ease;
+    transition: background 0.1s ease, border-color 0.1s ease;
+    -webkit-transition: background 0.1s ease, border-color 0.1s ease;
 }
 
 /* Apply grayscale to main content areas in dark mode */
 body.dark-mode .page-layout {
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
-    transition: filter 0.05s ease;
-    -webkit-transition: -webkit-filter 0.05s ease;
+    transition: filter 0.1s ease;
+    -webkit-transition: -webkit-filter 0.1s ease;
 }
 
 /* Enhanced contrast for GIFs in sidebars in dark mode */

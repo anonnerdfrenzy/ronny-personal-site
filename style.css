@@ -248,11 +248,11 @@ body.dark-mode .floating-okezan {
         0 0 100px #ffd700,
         2px 2px 4px #000000 !important;
     display: block;
-    animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 4s ease-in-out infinite, holy-shimmer 3s linear infinite;
-    -webkit-animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 4s ease-in-out infinite, holy-shimmer 3s linear infinite;
+    animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 1.5s ease-in-out infinite, holy-shimmer 3s linear infinite;
+    -webkit-animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 1.5s ease-in-out infinite, holy-shimmer 3s linear infinite;
     letter-spacing: 0.08em;
     margin: 0.2em 0;
-    line-height: 0.9;
+    line-height: 1.1;
 }
 
 @keyframes holy-glow {

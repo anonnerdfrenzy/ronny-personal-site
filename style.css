@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     font-size: calc(0.4vw + 0.6em);
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000, #00ff00, #0000ff);
     background: -webkit-linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000, #00ff00, #0000ff);
@@ -60,7 +60,7 @@ body {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     padding: 12px 25px;
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     font-size: calc(0.6vw + 0.9em);
     font-weight: bold;
     color: #00ff00;
@@ -112,7 +112,7 @@ body {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     padding: 12px 25px;
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     font-size: calc(0.6vw + 0.9em);
     font-weight: bold;
     color: #000000;
@@ -213,7 +213,7 @@ body.dark-mode .floating-okezan {
 
 .rainbow-text {
     font-size: calc(1.2vw + 1.3em);
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
     background: -webkit-linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
     -webkit-background-clip: text;
@@ -233,7 +233,7 @@ body.dark-mode .floating-okezan {
 
 .cyber-tagline {
     font-size: calc(0.6vw + 0.7em);
-    font-family: 'Papyrus', cursive;
+    font-family: 'Creepster', 'Papyrus', cursive;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 2px 2px 4px #000000;
     text-align: center;
@@ -307,7 +307,7 @@ body.dark-mode .floating-okezan {
 
 .shame-title {
     font-size: 2.2em;
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     color: #ff0000;
     text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 3px 3px 6px #000000;
     margin: 0 0 20px 0;
@@ -327,7 +327,7 @@ body.dark-mode .floating-okezan {
 
 .shame-text {
     font-size: 1.4em;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Kalam', 'Comic Sans MS', cursive;
     margin: 0;
     line-height: 1.4;
     color: #ffffff;
@@ -434,7 +434,7 @@ body.dark-mode .floating-okezan {
 
 .neon-text {
     font-size: calc(0.8vw + 1.2em);
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     text-align: center;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
@@ -598,7 +598,7 @@ body.dark-mode .floating-okezan {
     flex: 1;
     min-width: 150px;
     padding: 8px 12px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Kalam', 'Comic Sans MS', cursive;
     font-size: 1em;
     background: #000000;
     color: #00ff00;
@@ -625,7 +625,7 @@ body.dark-mode .floating-okezan {
 .sign-button {
     width: 100%;
     padding: 12px;
-    font-family: 'Impact', sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     font-size: 1.2em;
     font-weight: bold;
     background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00);

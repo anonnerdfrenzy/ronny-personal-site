@@ -303,6 +303,35 @@
             }
         });
 
+        // Test Supabase connection
+        async function testSupabase() {
+            try {
+                console.log('Testing Supabase connection...');
+                const { data, error } = await supabase.from('guestbook_entries').select('count');
+                console.log('Supabase test result:', { data, error });
+                if (error) {
+                    alert('Supabase Error: ' + error.message);
+                } else {
+                    alert('Supabase connected successfully!');
+                }
+            } catch (err) {
+                console.error('Supabase test failed:', err);
+                alert('Supabase test failed: ' + err.message);
+            }
+        }
+        
+        // Add test button temporarily
+        document.addEventListener('DOMContentLoaded', function() {
+            const testBtn = document.createElement('button');
+            testBtn.textContent = 'TEST SUPABASE';
+            testBtn.style.position = 'fixed';
+            testBtn.style.top = '10px';
+            testBtn.style.right = '10px';
+            testBtn.style.zIndex = '9999';
+            testBtn.onclick = testSupabase;
+            document.body.appendChild(testBtn);
+        });
+
         // Load entries on page load
         loadGuestbookEntries();
 

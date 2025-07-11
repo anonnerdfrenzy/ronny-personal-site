@@ -615,8 +615,10 @@ body.dark-mode .floating-okezan {
 }
 
 .email-gif {
-    width: 2vw;
-    height: 2vw;
+    width: 6vw;
+    height: 6vw;
+    min-width: 120px;
+    min-height: 120px;
     display: block;
     margin: 0 auto;
 }

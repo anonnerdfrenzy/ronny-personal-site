@@ -212,7 +212,7 @@ body.dark-mode .floating-okezan {
 }
 
 .rainbow-text {
-    font-size: calc(1.2vw + 1.3em);
+    font-size: calc(1.0vw + 1.2em);
     font-family: 'Oswald', 'Impact', sans-serif;
     background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
     background: -webkit-linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
@@ -221,6 +221,169 @@ body.dark-mode .floating-okezan {
     background-clip: text;
     /* Fallback for Safari if text clipping doesn't work */
     color: #ff00ff;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.holy-name {
+    font-size: 2.5em !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    background: linear-gradient(110deg, #ffffff 0%, #ffd700 25%, #ffffff 50%, #ffff00 75%, #ffd700 100%, transparent 100%, rgba(255,255,255,0.8) 110%, transparent 120%) !important;
+    background: -webkit-linear-gradient(110deg, #ffffff 0%, #ffd700 25%, #ffffff 50%, #ffff00 75%, #ffd700 100%, transparent 100%, rgba(255,255,255,0.8) 110%, transparent 120%) !important;
+    background-size: 200% 100% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 15px #ffffff,
+        0 0 20px #ffd700,
+        0 0 30px #ffd700,
+        0 0 40px #ffd700,
+        0 0 50px #ffff00,
+        0 0 60px #ffff00,
+        0 0 80px #ffd700,
+        0 0 100px #ffd700,
+        2px 2px 4px #000000 !important;
+    display: block;
+    animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 4s ease-in-out infinite, holy-shimmer 3s linear infinite;
+    -webkit-animation: holy-glow 2s ease-in-out infinite alternate, holy-pulse 3s ease-in-out infinite, holy-colors 4s ease-in-out infinite, holy-shimmer 3s linear infinite;
+    letter-spacing: 0.08em;
+    margin: 0.2em 0;
+    line-height: 0.9;
+}
+
+@keyframes holy-glow {
+    0% { 
+        text-shadow: 
+            0 0 5px #ffffff,
+            0 0 10px #ffffff,
+            0 0 15px #ffffff,
+            0 0 20px #ffd700,
+            0 0 30px #ffd700,
+            0 0 40px #ffd700,
+            0 0 50px #ffff00,
+            0 0 60px #ffff00,
+            0 0 80px #ffd700,
+            0 0 100px #ffd700,
+            2px 2px 4px #000000;
+    }
+    100% { 
+        text-shadow: 
+            0 0 10px #ffffff,
+            0 0 20px #ffffff,
+            0 0 30px #ffffff,
+            0 0 40px #ffd700,
+            0 0 60px #ffd700,
+            0 0 80px #ffd700,
+            0 0 100px #ffff00,
+            0 0 120px #ffff00,
+            0 0 140px #ffd700,
+            0 0 160px #ffd700,
+            2px 2px 4px #000000;
+    }
+}
+
+@keyframes holy-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@-webkit-keyframes holy-glow {
+    0% { 
+        text-shadow: 
+            0 0 5px #ffffff,
+            0 0 10px #ffffff,
+            0 0 15px #ffffff,
+            0 0 20px #ffd700,
+            0 0 30px #ffd700,
+            0 0 40px #ffd700,
+            0 0 50px #ffff00,
+            0 0 60px #ffff00,
+            0 0 80px #ffd700,
+            0 0 100px #ffd700,
+            2px 2px 4px #000000;
+    }
+    100% { 
+        text-shadow: 
+            0 0 10px #ffffff,
+            0 0 20px #ffffff,
+            0 0 30px #ffffff,
+            0 0 40px #ffd700,
+            0 0 60px #ffd700,
+            0 0 80px #ffd700,
+            0 0 100px #ffff00,
+            0 0 120px #ffff00,
+            0 0 140px #ffd700,
+            0 0 160px #ffd700,
+            2px 2px 4px #000000;
+    }
+}
+
+@-webkit-keyframes holy-pulse {
+    0%, 100% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.08); }
+}
+
+@keyframes holy-colors {
+    0% { 
+        filter: hue-rotate(0deg) saturate(1.2); 
+        -webkit-filter: hue-rotate(0deg) saturate(1.2);
+    }
+    25% { 
+        filter: hue-rotate(60deg) saturate(1.5); 
+        -webkit-filter: hue-rotate(60deg) saturate(1.5);
+    }
+    50% { 
+        filter: hue-rotate(120deg) saturate(1.3); 
+        -webkit-filter: hue-rotate(120deg) saturate(1.3);
+    }
+    75% { 
+        filter: hue-rotate(300deg) saturate(1.4); 
+        -webkit-filter: hue-rotate(300deg) saturate(1.4);
+    }
+    100% { 
+        filter: hue-rotate(360deg) saturate(1.2); 
+        -webkit-filter: hue-rotate(360deg) saturate(1.2);
+    }
+}
+
+@-webkit-keyframes holy-colors {
+    0% { 
+        -webkit-filter: hue-rotate(0deg) saturate(1.2);
+    }
+    25% { 
+        -webkit-filter: hue-rotate(60deg) saturate(1.5);
+    }
+    50% { 
+        -webkit-filter: hue-rotate(120deg) saturate(1.3);
+    }
+    75% { 
+        -webkit-filter: hue-rotate(300deg) saturate(1.4);
+    }
+    100% { 
+        -webkit-filter: hue-rotate(360deg) saturate(1.2);
+    }
+}
+
+@keyframes holy-shimmer {
+    0% { 
+        background-position: -200% 0;
+    }
+    100% { 
+        background-position: 200% 0;
+    }
+}
+
+@-webkit-keyframes holy-shimmer {
+    0% { 
+        background-position: -200% 0;
+    }
+    100% { 
+        background-position: 200% 0;
+    }
 }
 
 .tagline {
@@ -232,13 +395,15 @@ body.dark-mode .floating-okezan {
 }
 
 .cyber-tagline {
-    font-size: calc(0.6vw + 0.7em);
-    font-family: 'Creepster', 'Papyrus', cursive;
+    font-size: calc(0.7vw + 0.8em);
+    font-family: 'Kalam', 'Comic Sans MS', cursive;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 2px 2px 4px #000000;
     text-align: center;
     font-style: italic;
     margin: 0;
+    line-height: 1.4;
+    font-weight: 400;
 }
 
 .marquee-text {
@@ -920,7 +1085,13 @@ blink {
     }
     
     .rainbow-text {
-        font-size: 1.8em;
+        font-size: 1.6em;
+        text-align: center;
+        line-height: 1.1;
+    }
+    
+    .holy-name {
+        font-size: 2.0em !important;
     }
     
     .cool-sections {

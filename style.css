@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: calc(0.4vw + 0.6em);
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000, #00ff00, #0000ff);
     background: -webkit-linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000, #00ff00, #0000ff);
     color: #ffffff;
@@ -24,12 +25,15 @@ body {
     border: 5px solid #ff00ff;
     border-radius: 20px;
     -webkit-border-radius: 20px;
-    padding: 30px;
-    max-width: 900px;
-    margin: 20px auto;
+    padding: calc(1.5vw + 15px);
+    width: 100%;
+    max-width: calc(40vw + 400px);
+    min-width: 500px;
+    margin: 0;
     position: relative;
     box-shadow: 0 0 30px #ff00ff, inset 0 0 30px rgba(255, 0, 255, 0.3);
     -webkit-box-shadow: 0 0 30px #ff00ff, inset 0 0 30px rgba(255, 0, 255, 0.3);
+    flex: 1;
 }
 
 /* Welcome banner */
@@ -45,7 +49,7 @@ body {
 }
 
 .rainbow-text {
-    font-size: 2.5em;
+    font-size: calc(1.2vw + 1.3em);
     font-family: 'Impact', sans-serif;
     background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
     background: -webkit-linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
@@ -65,7 +69,7 @@ body {
 }
 
 .cyber-tagline {
-    font-size: 1.3em;
+    font-size: calc(0.6vw + 0.7em);
     font-family: 'Papyrus', cursive;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 2px 2px 4px #000000;
@@ -75,7 +79,7 @@ body {
 }
 
 .marquee-text {
-    font-size: 1.2em;
+    font-size: calc(0.5vw + 0.7em);
     font-weight: bold;
     color: #ffff00;
     text-shadow: 2px 2px 4px #000000;
@@ -94,8 +98,8 @@ body {
 }
 
 .construction-gif {
-    width: 50px;
-    height: 50px;
+    width: 2.5vw;
+    height: 2.5vw;
     margin: 0 20px;
 }
 
@@ -266,7 +270,7 @@ body {
 }
 
 .neon-text {
-    font-size: 2em;
+    font-size: calc(0.8vw + 1.2em);
     font-family: 'Impact', sans-serif;
     text-align: center;
     color: #00ffff;
@@ -287,8 +291,8 @@ body {
 }
 
 .dancing-gif, .spinning-gif {
-    width: 80px;
-    height: 80px;
+    width: 4vw;
+    height: 4vw;
 }
 
 .profile-text {
@@ -374,8 +378,8 @@ body {
 }
 
 .email-gif {
-    width: 40px;
-    height: 40px;
+    width: 2vw;
+    height: 2vw;
     display: block;
     margin: 0 auto;
 }
@@ -425,8 +429,8 @@ body {
 }
 
 .flame-gif {
-    width: 60px;
-    height: 60px;
+    width: 3vw;
+    height: 3vw;
 }
 
 .footer-text {
@@ -434,28 +438,49 @@ body {
     line-height: 1.4;
 }
 
-/* Floating elements */
-.floating-elements {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1000;
+/* Three-column page layout */
+.page-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(1vw + 10px);
+    max-width: calc(100vw - 40px);
+    margin: 0 auto;
+    padding: calc(1vw + 10px);
+}
+
+/* Left sidebar */
+.left-sidebar {
+    width: calc(12vw + 120px);
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(2vw + 20px);
+    position: sticky;
+    top: calc(1vw + 10px);
+}
+
+/* Right sidebar */
+.right-sidebar {
+    width: calc(10vw + 100px);
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1vw + 15px);
+    position: sticky;
+    top: calc(1vw + 10px);
 }
 
 .floating-skull {
-    position: fixed;
-    top: 15%;
-    left: calc(5% + 30px);
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px;
-    max-height: 180px;
+    width: calc(8vw + 80px) !important;
+    height: calc(8vw + 80px) !important;
+    max-width: calc(8vw + 80px);
+    max-height: calc(8vw + 80px);
+    min-width: 120px;
+    min-height: 120px;
     -webkit-animation: float 4s ease-in-out infinite, spin 2s linear infinite;
     animation: float 4s ease-in-out infinite, spin 2s linear infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -467,12 +492,12 @@ body {
 }
 
 .floating-guitar {
-    position: fixed;
-    top: 45%;
-    left: calc(7% - 140px);
+    width: calc(7vw + 70px);
+    height: auto;
+    min-width: 100px;
+    max-width: 150px;
     -webkit-animation: float 3.5s ease-in-out infinite;
     animation: float 3.5s ease-in-out infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -482,12 +507,12 @@ body {
 }
 
 .floating-guitar2 {
-    position: fixed;
-    top: 45%;
-    left: calc(7% + 40px);
+    width: calc(7vw + 70px);
+    height: auto;
+    min-width: 100px;
+    max-width: 150px;
     -webkit-animation: float 4s ease-in-out infinite;
     animation: float 4s ease-in-out infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -497,16 +522,14 @@ body {
 }
 
 .floating-rat {
-    position: fixed;
-    top: calc(20% - 50px);
-    right: calc(12% - 60px);
-    width: 150px !important;
-    height: 150px !important;
-    max-width: 150px;
-    max-height: 150px;
+    width: calc(5vw + 50px) !important;
+    height: calc(5vw + 50px) !important;
+    max-width: calc(5vw + 50px);
+    max-height: calc(5vw + 50px);
+    min-width: 80px;
+    min-height: 80px;
     -webkit-animation: float 3s ease-in-out infinite;
     animation: float 3s ease-in-out infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -516,16 +539,14 @@ body {
 }
 
 .floating-rat2 {
-    position: fixed;
-    top: calc(20% - 50px);
-    right: calc(18% - 60px);
-    width: 140px !important;
-    height: 140px !important;
-    max-width: 140px;
-    max-height: 140px;
+    width: calc(4.5vw + 45px) !important;
+    height: calc(4.5vw + 45px) !important;
+    max-width: calc(4.5vw + 45px);
+    max-height: calc(4.5vw + 45px);
+    min-width: 75px;
+    min-height: 75px;
     -webkit-animation: float 2.5s ease-in-out infinite;
     animation: float 2.5s ease-in-out infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -535,16 +556,14 @@ body {
 }
 
 .floating-rat3 {
-    position: fixed;
-    top: calc(20% - 50px);
-    right: calc(7% - 60px);
-    width: 130px !important;
-    height: 130px !important;
-    max-width: 130px;
-    max-height: 130px;
+    width: calc(4vw + 40px) !important;
+    height: calc(4vw + 40px) !important;
+    max-width: calc(4vw + 40px);
+    max-height: calc(4vw + 40px);
+    min-width: 70px;
+    min-height: 70px;
     -webkit-animation: float 3.8s ease-in-out infinite;
     animation: float 3.8s ease-in-out infinite;
-    z-index: 1001;
     background: transparent !important;
     border: none;
     outline: none;
@@ -555,11 +574,12 @@ body {
 
 .floating-okezan {
     position: fixed;
-    bottom: -25px;
+    bottom: calc(-1vw - 10px);
     right: 0px;
-    width: 450px;
+    width: calc(14vw + 140px);
     height: auto;
     z-index: -999;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -629,10 +649,30 @@ blink {
 }
 
 /* Responsive design (even in the 90s!) */
+@media (max-width: 1024px) {
+    .page-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-sidebar, .right-sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        order: 2;
+    }
+    
+    .container {
+        order: 1;
+        max-width: 90vw;
+        min-width: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        margin: 10px;
-        padding: 20px;
+        padding: 15px;
     }
     
     .rainbow-text {
@@ -651,6 +691,10 @@ blink {
     .footer {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .left-sidebar, .right-sidebar {
+        gap: calc(2vw + 10px);
     }
 }
 

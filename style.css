@@ -413,10 +413,12 @@ body.dark-mode .floating-okezan {
     font-size: calc(0.5vw + 0.7em);
     font-weight: bold;
     color: #ffff00;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 1px 1px 2px #000000;
     background: rgba(255, 0, 255, 0.3);
     padding: 10px;
     border-radius: 10px;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 /* Construction zone */
@@ -532,8 +534,10 @@ body.dark-mode .floating-okezan {
     font-size: 1.1em;
     font-weight: bold;
     color: #00ff00;
-    text-shadow: 0 0 10px #00ff00, 2px 2px 4px #000000;
+    text-shadow: 0 0 5px #00ff00, 1px 1px 2px #000000;
     background: transparent;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 /* Divorce counter */
@@ -737,12 +741,15 @@ body.dark-mode .floating-okezan {
     border: 2px solid #ffffff;
     border-radius: 10px;
     padding: 10px;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .guestbook-scroll p {
     font-size: 1.1em;
     margin: 10px 0;
     text-align: center;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 /* Guestbook form */
@@ -1114,6 +1121,12 @@ blink {
     .left-sidebar, .right-sidebar {
         gap: calc(2vw + 10px);
     }
+}
+
+/* Marquee performance optimizations */
+marquee {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 /* Extra 90s flourishes */

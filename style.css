@@ -85,6 +85,21 @@ body {
     -webkit-transform: scale(0.95);
 }
 
+.dark-mode-subtitle {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 0.7em;
+    color: #ffffff;
+    text-shadow: 0 0 6px #000000, 1px 1px 3px #000000;
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.dark-mode-subtitle .parentheses {
+    font-style: normal;
+}
+
 /* Dark mode styles */
 body.dark-mode {
     background: #000000 !important;

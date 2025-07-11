@@ -309,12 +309,33 @@ body.dark-mode .floating-okezan {
     background: linear-gradient(45deg, #ffff00, #ff0000);
     border: 3px dashed #000000;
     margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.construction-zone blink {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px 4px #ffffff;
+    font-family: 'Oswald', 'Impact', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .construction-gif {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 5vw;
+    height: 5vw;
+    min-width: 60px;
+    min-height: 60px;
     margin: 0 20px;
+}
+
+.construction-gif.mirrored {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
 }
 
 @keyframes bounce {
